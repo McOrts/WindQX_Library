@@ -16,33 +16,30 @@
 
 #include "Arduino.h"
 
-/* reading variables */
-unsigned int PWM;
-float WSPE;
-float TEMP;
-unsigned int CRC;
-String FRAME;
-
-/* Measurements values */
-float temperature;
-float wind;
-
 void setup() {
   Serial.begin(115200);
 }
 
-void clearSerialBuffer() {
-  while (Serial.available() > 0) {
-    Serial.read(); // Read and discard the incoming byte
-  }
-}
-
 void loop() {
   if (Serial.available() > 0) {
-    FRAME = Serial.readStringUntil('\n'); // Lee la FRAME hasta encontrar un salto de línea
+    /* reading variables */
+    unsigned int PWM;
+    float WSPE;
+    float TEMP;
+    unsigned int CRC;
+    String FRAME;
+
+    /* Measurements values */
+    float temperature;
+    float wind;
+
+    /* Reading control */
+    String status;
+
+    FRAME = Serial.readStringUntil('\n'); // Read the FRAME until a line break is found
     Serial.println(FRAME);
 
-    // Divide la trama en sus componentes separados por espacios
+    // Divide the frame into its components separated by spaces.
     int values[4];
     int counter = 0;
     char *ptr = strtok((char *)FRAME.c_str(), " ");
@@ -52,23 +49,34 @@ void loop() {
       counter++;
     }
 
-    // Asegúrate de que se hayan encontrado los 4 valores esperados
+    // Check that the 4 expected values ​​have been found
     if (counter == 4) {
       PWM = values[0];
       WSPE = values[1];
       TEMP = values[2];
       CRC = values[3];
 
+      temperature = TEMP / 100 - 40;
       wind = WSPE / 10;
-      temperature = TEMP / 100;
+      if (wind > 200) {
+        wind = 0;
+        status = "Wet sensor";
+      } else {
+        status = "Ok";
+      }
+
       Serial.print("Wind: ");
       Serial.println(wind);
       Serial.print("Temperature: ");
       Serial.println(temperature);
+      Serial.print("Status: ");
+      Serial.println(status);
     } else {
-      Serial.println("Error: Trama de datos incorrecta");
-      clearSerialBuffer();
+      Serial.println("Reading error");
+      while (Serial.available() > 0) {
+        Serial.read(); // Read and discard the incoming byte
+      }
+      status = "Reading error";
     }
-    delay (1000);
   }
 }
