@@ -16,9 +16,11 @@ class WindQX {
   	String getData();
   	float getWind();
   	float getTemperature();
+    String getStatus();
 
     float _windKH;
     float _temperatureDeg;
+    String _status;
 };
 
 #endif

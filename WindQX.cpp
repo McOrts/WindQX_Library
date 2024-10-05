@@ -1,3 +1,9 @@
+/*
+  WindQX Library
+  Author: McOrts (Carlos Orts)
+  Date : Octover 2024
+*/
+
 #include "Arduino.h"
 
 WindQX::WindQX() {
@@ -16,9 +22,6 @@ String WindQX::getData() {
     float TEMP;
     unsigned int CRC;
     String FRAME;
-
-    /* Reading control */
-    String status;
 
     FRAME = Serial.readStringUntil('\n'); // Read the FRAME until a line break is found
     Serial.println(FRAME);
@@ -44,15 +47,18 @@ String WindQX::getData() {
       _windKH = WSPE / 10;
       if (wind > 200) {
         _windKH = 0;
-        status = "Wet sensor";
+        _status = "Wet sensor";
+        return "KO";
       } else {
-        status = "Ok";
+        _status = "Ok";
+        return "OK";
       }
     } else {
       while (Serial.available() > 0) {
         Serial.read(); // Read and discard the incoming byte
       }
-      status = "Reading error";
+      _status = "Reading error";
+      return "KO";
     }
   }
 }
@@ -63,4 +69,8 @@ float WindQX::getWind() {
 
 float WindQX::getTemperature() {
   return _temperatureDeg;
+}
+
+String WindQX::getStatus() {
+  return _status;
 }
