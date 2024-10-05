@@ -1,0 +1,5 @@
+# Syntax Coloring Map For WindQX libray
+
+# Datatypes (KEYWORD1)
+WindQX	KEYWORD1
+
