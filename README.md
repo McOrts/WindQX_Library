@@ -1,5 +1,5 @@
 # WindQX Library
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/McOrts/WindQX_Library?include_prereleases)](https://github.com/McOrts/WindQX_Library/releases) 
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/McOrts/WindQX_Library?include_prereleases)](https://github.com/McOrts/WindQX_Library/releases)
 [![Arduino Registry](https://www.ardu-badge.com/badge/WindQX_Library.svg)](https://www.arduinolibraries.info/libraries/WindQX_Library)
 
 [![Framework](https://img.shields.io/badge/Framework-Arduino-blue)](https://www.arduino.cc/) ![GitHub](https://img.shields.io/github/license/McOrts/WindQX_Library) ![GitHub last commit](https://img.shields.io/github/last-commit/McOrts/WindQX_Library)
