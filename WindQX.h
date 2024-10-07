@@ -4,23 +4,23 @@
   Date : Octover 2024
 */
 
-#include "Arduino.h"
-
 #ifndef WINDQX_H
 #define WINDQX_H
 
+#include "Arduino.h"
+
 class WindQX {
+  private:
+    float _windKH;
+    float _temperatureDeg;
+    String _status;
   public:
     WindQX();
-    bool Initialize();
+    void Initialize();
   	String getData();
   	float getWind();
   	float getTemperature();
     String getStatus();
-
-    float _windKH;
-    float _temperatureDeg;
-    String _status;
 };
 
 #endif

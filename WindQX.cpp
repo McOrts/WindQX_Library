@@ -4,14 +4,13 @@
   Date : Octover 2024
 */
 
-#include "Arduino.h"
+#include "WindQX.h"
 
 WindQX::WindQX() {
 }
 
-bool WindQX::Initialize() {
+void WindQX::Initialize() {
     Serial.begin(115200);
-    return True;
 }
 
 String WindQX::getData() {
@@ -24,8 +23,7 @@ String WindQX::getData() {
     String FRAME;
 
     FRAME = Serial.readStringUntil('\n'); // Read the FRAME until a line break is found
-    Serial.println(FRAME);
-
+    
     // Divide the frame into its components separated by spaces.
     int values[4];
     int counter = 0;
@@ -45,7 +43,7 @@ String WindQX::getData() {
       // measures calibration
       _temperatureDeg = TEMP / 100 - 40;
       _windKH = WSPE / 10;
-      if (wind > 200) {
+      if (_windKH > 200) {
         _windKH = 0;
         _status = "Wet sensor";
         return "KO";
@@ -61,6 +59,8 @@ String WindQX::getData() {
       return "KO";
     }
   }
+  _status = "Not connected";
+  return "KO";
 }
 
 float WindQX::getWind() {

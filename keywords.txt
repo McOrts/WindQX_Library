@@ -3,3 +3,9 @@
 # Datatypes (KEYWORD1)
 WindQX	KEYWORD1
 
+# Methods and Functions (KEYWORD2)
+Initialize	KEYWORD2
+getData	KEYWORD2
+getWind	KEYWORD2
+getTemperature	KEYWORD2
+getStatus	KEYWORD2
