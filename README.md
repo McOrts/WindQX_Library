@@ -8,5 +8,15 @@
 [![Compile Examples status](https://github.com/arduino-libraries/WindQX_Library/actions/workflows/compile-examples.yml/badge.svg)](https://github.com/arduino-libraries/WindQX_Library/actions/workflows/compile-examples.yml)
 [![Spell Check status](https://github.com/arduino-libraries/WindQX_Library/actions/workflows/spell-check.yml/badge.svg)](https://github.com/arduino-libraries/WindQX_Library/actions/workflows/spell-check.yml)
 
-A simple library for the WindQX solid state anemometers. It measures the wind speed and temperature. The library is designed to be used with the Arduino IDE. Compitable with most Arduino and ESP boards.
+It measures the wind speed and the temperature from IoT devices made by [ECD (e.g. SA.01)](https://ecdsl.com/en/producto/sa-01-2/). The library is designed to be used with the Arduino IDE. Compatible with most Arduino and ESP boards.
 
+## List of response statuses
+| Message | Description |
+|-----------|-----------|
+| OK | Correct reading |
+| Reading error | Incorrect reading due to corrupt or incomplete data frame |
+| Wet sensor | The internal sensor of the anemometer is wet |
+| Not connected | Sensor not conected |
+
+## Sample sensor device
+<img src="https://github.com/ElectronicCircuitDesing/solid_state_anemometer_wifi/blob/main/img/IMG_7342.png" width="300" align="center"/>
