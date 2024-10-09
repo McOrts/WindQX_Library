@@ -3,7 +3,7 @@
   Download the library here- https://github.com/McOrts/WindQX_Library
   With these devices: https://ecdsl.com/en/categoria-producto/windqx/
   Author: McOrts (Carlos Orts)
-  Date : Octover 2024
+  Date : October 2024
  * ****************************************************************
   Pinout connection for Arduino UNO
 
