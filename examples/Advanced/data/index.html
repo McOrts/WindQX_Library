@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WindQX IoT Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="gauge.min.js"></script>
+  </head>
+  <body>
+    <div class="topnav">
+      <h1>WindQX Anemometer measurements</h1>
+    </div>
+    <div class="content">
+      <div class="card-grid">
+        <div class="card">
+          <p class="card-title">Wind Speed</p>
+          <canvas id="gauge-speed"></canvas>
+        </div>
+        <div class="card">
+          <p class="card-title">Temperature</p>
+          <canvas id="gauge-temperature"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

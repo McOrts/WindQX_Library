@@ -1,7 +1,7 @@
 /*******************************************************************
   This is a basic example sketch to show the working of this library:
-  Download the library here- https://github.com/McOrts/WindQX_Library
-  With these devices: https://ecdsl.com/en/categoria-producto/windqx/
+  Download the library here: https://github.com/McOrts/WindQX_Library
+  For these devices: https://ecdsl.com/en/categoria-producto/windqx/
   Author: McOrts (Carlos Orts)
   Date : October 2024
  * ****************************************************************
@@ -19,8 +19,10 @@
 #include "Arduino.h"
 #include "WindQX.h"
 
+// Create a sensor object
 WindQX SA01;
 
+// Init WindQX sensor
 void setup() {
   SA01.Initialize();
 }
@@ -33,5 +35,6 @@ void loop() {
   } else {
       Serial.println(SA01.getStatus());
   }
-  delay(2000);  
+  delay(500);
+  Serial.flush();
 }

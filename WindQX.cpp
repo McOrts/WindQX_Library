@@ -15,16 +15,18 @@ void WindQX::Initialize() {
 
 String WindQX::getData() {
   if (Serial.available() > 0) {
-    /* reading variables */
+    /* reading variable */
+    String FRAME;
+
+    FRAME = Serial.readStringUntil('\n'); // Read the FRAME until a line break is found
+
+    /* data variables */
     unsigned int PWM;
     float WSPE;
     float TEMP;
     unsigned int CRC;
-    String FRAME;
-
-    FRAME = Serial.readStringUntil('\n'); // Read the FRAME until a line break is found
     
-    // Divide the frame into its components separated by spaces.
+    // Split the frame into its components separated by spaces.
     int values[4];
     int counter = 0;
     char *ptr = strtok((char *)FRAME.c_str(), " ");
