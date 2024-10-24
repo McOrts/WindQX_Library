@@ -1,7 +1,7 @@
 # WindQX Library advanced example
 
-<img src="anemometro_IoT_wifi_mqtt_SolidState_ESP32_bb.png"  align="center" />
-<img src="WinQX_Dashboard.jpg" width="500" align="center" />
+<img src="anemometro_IoT_wifi_mqtt_SolidState_ESP32_bb.png" width="600" align="center" />
+<img src="WinQX_Dashboard.jpg" align="center" />
 
 ## Update user UI files
 Then, upload the code to your ESP32 board. Make sure you have the right board and COM port selected. Also, make sure you’ve added your network credentials.
@@ -13,7 +13,7 @@ Press [Ctrl] + [Shift] + [P] on Windows or [⌘] + [Shift] + [P] on MacOS to ope
 
 If you don’t have this option is because you didn’t install the filesystem uploader plugin. [Check this tutorial](https://randomnerdtutorials.com/arduino-ide-2-install-esp32-littlefs/).
 
-<img src="UploadFiles.jpg" width="500" align="center" />
+<img src="UploadFiles.jpg" align="center" />
 
 ## References
 https://randomnerdtutorials.com/esp32-web-server-gauges/
