@@ -26,8 +26,8 @@
 #include "WindQX.h"
 
 // Replace with your network credentials
-const char* ssid = " ECD-LAB_EXT";
-const char* password = "Sens0rPatr0l!";
+const char* ssid = "¿?";
+const char* password = "¿?";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
